@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Альфа М здоровье</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Иконки -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Верхняя панель -->
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <div class="info">
+          <span
+            ><i class="fa-regular fa-clock"></i> Ежедневно: 08:00 - 22:00</span
+          >
+          <span
+            ><i class="fa-solid fa-location-dot"></i> г.Ейск, ул. Первомайская,
+            90\1</span
+          >
+        </div>
+        <div class="links">
+          <a href="#">Лицензии</a>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Шапка -->
+    <header class="header" id="header">
+      <div class="container header-inner">
+        <div class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <div class="logo-text">
+            <h1><span>Альфа М здоровье</span></h1>
+            <small>СЕМЕЙНАЯ АПТЕКА</small>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="#home" class="active">Главная</a>
+          <a href="#catalog">Каталог</a>
+          <a href="#about">О нас</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="actions">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Поиск лекарств..." />
+          </div>
+          <div class="cart-btn" onclick="addToCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge" id="cart-count">0</span>
+          </div>
+          <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Мобильное меню -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#home" onclick="toggleMenu()">Главная</a>
+        <a href="#catalog" onclick="toggleMenu()">Каталог</a>
+        <a href="#about" onclick="toggleMenu()">О нас</a>
+        <a href="#contacts" onclick="toggleMenu()">Контакты</a>
+      </div>
+    </header>
+
+    <!-- Главный экран -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <span class="badge-tag">Бесплатная доставка от 2000₽</span>
+          <h2>
+            Забота о здоровье <br />
+            начинается <span class="text-accent">здесь</span>
+          </h2>
+          <p>
+            Более 10 000 товаров в наличии. Сертифицированные лекарства,
+            витамины и медтехника с доставкой на дом.
+          </p>
+          <div class="hero-buttons">
+            <a href="#catalog" class="btn btn-primary"
+              >Перейти в каталог <i class="fa-solid fa-arrow-right"></i
+            ></a>
+            <a href="#contacts" class="btn btn-secondary">Наши аптеки</a>
+          </div>
+          <div class="features-mini">
+            <div><i class="fa-solid fa-truck-fast"></i> Быстрая доставка</div>
+            <div>
+              <i class="fa-solid fa-check-double"></i> Гарантия качества
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=1974&auto=format&fit=crop"
+            alt="Аптека"
+          />
+          <div class="rating-card">
+            <div class="stars"><i class="fa-solid fa-star"></i></div>
+            <div>
+              <strong>4.9 / 5.0</strong>
+              <small>Рейтинг клиентов</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Категории -->
+    <section id="catalog" class="section categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle">Каталог</span>
+          <h3>Категории товаров</h3>
+        </div>
+        <div class="grid-categories">
+          <div class="cat-card">
+            <div class="icon blue"><i class="fa-solid fa-pills"></i></div>
+            <h4>Лекарства</h4>
+            <a href="#">Смотреть <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="cat-card">
+            <div class="icon orange">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h4>Витамины и БАД</h4>
+            <a href="#">Смотреть <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="cat-card">
+            <div class="icon teal"><i class="fa-solid fa-stethoscope"></i></div>
+            <h4>Медтехника</h4>
+            <a href="#">Смотреть <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="cat-card">
+            <div class="icon pink"><i class="fa-solid fa-baby"></i></div>
+            <h4>Мама и малыш</h4>
+            <a href="#">Смотреть <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Популярные товары -->
+    <section class="section products">
+      <div class="container">
+        <div class="section-header row">
+          <div>
+            <span class="subtitle">Выбор покупателей</span>
+            <h3>Популярное</h3>
+          </div>
+          <a href="#" class="btn-link">Смотреть все</a>
+        </div>
+
+        <div class="grid-products">
+          <!-- Товар 1 -->
+          <div class="product-card">
+            <span class="tag">Хит</span>
+            <div class="img-box">
+              <img
+                src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1974&auto=format&fit=crop"
+                alt="Товар"
+              />
+            </div>
+            <div class="info">
+              <h4>Мультивитамины Premium</h4>
+              <div class="price-row">
+                <span class="price">890 ₽</span>
+                <span class="old-price">1200 ₽</span>
+              </div>
+              <button class="btn-cart" onclick="addToCart()">В корзину</button>
+            </div>
+          </div>
+          <!-- Товар 2 -->
+          <div class="product-card">
+            <span class="tag new">New</span>
+            <div class="img-box">
+              <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
+                alt="Товар"
+              />
+            </div>
+            <div class="info">
+              <h4>Тонометр Smart Auto</h4>
+              <div class="price-row">
+                <span class="price">3 450 ₽</span>
+              </div>
+              <button class="btn-cart" onclick="addToCart()">В корзину</button>
+            </div>
+          </div>
+          <!-- Товар 3 -->
+          <div class="product-card">
+            <span class="tag sale">-15%</span>
+            <div class="img-box">
+              <img
+                src="https://images.unsplash.com/photo-1550572017-ddf35445627a?q=80&w=2070&auto=format&fit=crop"
+                alt="Товар"
+              />
+            </div>
+            <div class="info">
+              <h4>Крем DermaCare</h4>
+              <div class="price-row">
+                <span class="price">1 100 ₽</span>
+              </div>
+              <button class="btn-cart" onclick="addToCart()">В корзину</button>
+            </div>
+          </div>
+          <!-- Товар 4 -->
+          <div class="product-card">
+            <div class="img-box">
+              <img
+                src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1974&auto=format&fit=crop"
+                alt="Товар"
+              />
+            </div>
+            <div class="info">
+              <h4>Аптечка Home</h4>
+              <div class="price-row">
+                <span class="price">1 890 ₽</span>
+              </div>
+              <button class="btn-cart" onclick="addToCart()">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section id="about" class="section benefits">
+      <div class="container grid-benefits">
+        <div class="benefit-item">
+          <div class="icon-circle">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4>Сертифицированные товары</h4>
+          <p>
+            Работаем только с официальными поставщиками. Строгий контроль сроков
+            годности.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon-circle"><i class="fa-solid fa-truck-fast"></i></div>
+          <h4>Доставка за 60 минут</h4>
+          <p>
+            Собственная курьерская служба. Бережная упаковка и соблюдение
+            температурного режима.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon-circle"><i class="fa-solid fa-user-doctor"></i></div>
+          <h4>Консультация фармацевта</h4>
+          <p>
+            Бесплатная помощь в подборе аналогов и консультации по применению
+            24/7.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="contacts">
+      <div class="container footer-grid">
+        <div class="col brand">
+          <div class="logo-footer">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Альфа М здоровье</span>
+          </div>
+          <p>
+            Современная сеть аптек с широким ассортиментом и профессиональным
+            подходом.
+          </p>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="col">
+          <h4>Компания</h4>
+          <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Лицензии</a></li>
+            <li><a href="#">Вакансии</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Покупателям</h4>
+          <ul>
+            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="#">Возврат товара</a></li>
+            <li><a href="#">Программа лояльности</a></li>
+          </ul>
+        </div>
+        <div class="col contacts">
+          <h4>Контакты</h4>
+          <div class="phone">8 (800) 123-45-67</div>
+          <div class="address">
+            <i class="fa-solid fa-location-dot"></i> г.Ейск, ул. Первомайская,
+            90\1
+          </div>
+          <div class="time">
+            <i class="fa-regular fa-clock"></i> Ежедневно: 08:00 - 20:00
+          </div>
+          <button class="btn btn-primary small">Заказать звонок</button>
+        </div>
+      </div>
+      <div class="copyright container">
+        <p>© 2024 ЗдоровьеПлюс. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
